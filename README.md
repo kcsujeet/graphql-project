@@ -6,6 +6,8 @@
   <li>Apollo Server</li>
   <li>JWT</li>
   <li>Bcrypt</li>
+  <li>MongoDB Atlas</li>
+  <li>Mongoose</li>
   
 </ul>
 <p>In the first commit I'm just pushing the api.<p>
