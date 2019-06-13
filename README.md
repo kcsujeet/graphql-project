@@ -1,4 +1,13 @@
 <h4>This is my first project in graphql. </h4>
+<p>Following are the technologies used.</p>
+<ul>
+  <li>Nodejs</li>
+  <li>Graphql</li>
+  <li>Apollo Server</li>
+  <li>JWT</li>
+  <li>Bcrypt</li>
+  
+</ul>
 <p>In the first commit I'm just pushing the api.<p>
 <ul>The user can do following things with  the <strong>graphql playground</strong>
   <li> Signup</li>
