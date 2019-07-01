@@ -1,0 +1,11 @@
+query {
+    get_posts{
+        id
+        title
+        description
+        created_by{
+            id
+            name
+        }
+    }
+}

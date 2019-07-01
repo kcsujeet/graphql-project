@@ -21,6 +21,9 @@ const resolvers = {
 
 }
 const server = new ApolloServer({
+    cors: {
+        origin: 'http://localhost:8080'
+    },
     typeDefs,
     resolvers,
     context: ({req}) => {

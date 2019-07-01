@@ -17,6 +17,8 @@ type Post{
     description: String
     created_by: User!
     comments: [Comment!]
+    createdAt: Date! 
+    updatedAt: Date!
 }
 
 type User{
@@ -25,13 +27,19 @@ type User{
     email: String!
     comments: [Comment!]
     posts: [Post]
+    createdAt: Date! 
+    updatedAt: Date!
 }
 
 type Mutation{
     signup(email: String!, password: String!, name: String!): AuthPayload!
     login(email: String!, password: String!): AuthPayload!
     add_post(title:String!, description: String!):  Post!
+    update_post(title:String!, description: String, id: ID!): Post!
+    delete_post(id:ID!): Post!
     add_comment(text:String!, postId: String!):  Comment!
+    update_comment(text:String!): Comment!
+    delete_comment(id:ID!): Comment!
 }
 
 type AuthPayload {
