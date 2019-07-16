@@ -1,0 +1,3 @@
+mutation($bool_value: Boolean!) {
+    toggleIsLoggedIn(bool_value: $bool_value) @client
+}

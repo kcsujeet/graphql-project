@@ -8,6 +8,7 @@ type Query{
     get_post(id:ID!): Post
     get_posts: [Post!]
     get_users: [User!]
+    get_my_posts: [Post!]
 
 }
 

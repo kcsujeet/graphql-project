@@ -7,6 +7,11 @@
 <script>
 export default {
     name: 'PostNotFound',
+    
+mounted: function(){
+            this.$router.push({path: '/not-found'})
+        }
+    
 }
 </script>
 

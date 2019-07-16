@@ -50,11 +50,11 @@ a {
 }
 
 .left-box-shadow{
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,.1) !important;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2) !important;
 }
 
 .border-thin{
-    border: 1px solid #dfe1e5 !important;
+    border: 1px solid #ced4da !important;
 }
 
 .display-flex{
@@ -71,8 +71,20 @@ a {
   color: #ffffff91 !important ;
 }
 
-.border-radius-25{
+.border-radius-0.25{
   border-radius: .25rem;
+}
+
+.border-radius-1{
+  border-radius: 1rem !important;
+}
+
+.border-radius-2{
+  border-radius: 2rem !important;
+}
+
+.border-radius-3{
+  border-radius: 3.5rem !important;
 }
 
 .router-link-active{
@@ -85,3 +97,4 @@ a {
 .flex-direction-column{
   flex-direction: column;
 }
+

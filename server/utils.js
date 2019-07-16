@@ -1,8 +1,17 @@
 const jwt = require('jsonwebtoken')
 const APP_SECRET = 'GraphQL-is-aw3some'
 
+var get_cookies = function(request) {
+  var cookies = {};
+  request.headers && request.headers.cookie.split(';').forEach(function(cookie) {
+    var parts = cookie.match(/(.*?)=(.*)$/)
+    cookies[ parts[1].trim() ] = (parts[2] || '').trim();
+  });
+  return cookies;
+};
+
 function getUserId(context) {
-  const Authorization = context.req.get('Authorization')
+  const Authorization = get_cookies(context.req)['session_token']
   if (Authorization) {
     const token = Authorization.replace('Bearer ', '')
     const { userId } = jwt.verify(token, APP_SECRET)

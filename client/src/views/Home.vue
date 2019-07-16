@@ -1,12 +1,13 @@
 <template>
   <div class="row justify-content-center">
-    <div class="col-md-11">
+    <div class="col-md-10">
         <div class="row">
           <h6 class="text-dark-gray mt-4 mb-4 font-weight-bold">All Posts</h6>
         </div>
       <div class="justify-content-center row">
         <div class="col-md-12">
-          <post v-for="(post,index) in get_posts" v-bind:post="post" :key="index"/>
+          <img v-if="!get_posts" class="icon" src="../../public/images/loading.gif">
+          <post v-else v-for="(post,index) in get_posts" v-bind:post="post" :key="index"/>
         </div>
       </div>
     </div>

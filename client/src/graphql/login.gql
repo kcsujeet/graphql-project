@@ -7,6 +7,7 @@ mutation($email: String!, $password: String!) {
     user {
       email
       posts {
+        id
         title
         description
       }

@@ -10,8 +10,10 @@ async function signup(parent, args, context, info) {
     const password = await bcrypt.hash(args.password, 10)
     const user = await User.create({ ...args, password })
     const token = jwt.sign({ userId: user.id }, APP_SECRET)
+    context.response.cookie('session_token', token, { httpOnly: true });
+    const isLoggedIn = true
     return {
-        token,
+        isLoggedIn,
         user,
     }
 }
@@ -26,8 +28,12 @@ async function login(parent, args, context, info) {
         throw new Error('Invalid password')
     }
     const token = jwt.sign({ userId: user.id }, APP_SECRET)
+    context.res.cookie('session_token', token, { httpOnly: true });
+    
+    const isLoggedIn = true
+
     return {
-        token,
+        isLoggedIn,
         user,
     }
 }

@@ -1,0 +1,14 @@
+mutation($title: String!, $description: String!){
+  add_post(
+    title: $title
+    description: $description
+  ) {
+    id
+    title
+    description
+    created_by{
+      id
+      name
+    }
+  }
+}
