@@ -12,12 +12,13 @@
   <li>Apollo Client</li>
   
 </ul>
-<ul>Points to be noted:
+<p>Points to be noted:</p>
+<ul>
   <li> Storing jwt token in http only cookie.</li>
   <li> Using Apollo cache as the single source of truth. </li>
 </ul>
-
-<ul>The user can do following things with  the <strong>graphql playground</strong>
+<p>The user can do following things with  the <strong>graphql playground</strong></p>
+<ul>
   <li> Signup</li>
   <li> Login </li>
   <li> Create, Update and Delete Post </li>
