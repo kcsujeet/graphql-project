@@ -1,10 +1,19 @@
 <template>
   <div class="row h-100 w-100 justify-content-center">
     <div class="col-md-10 h-100 display-flex align-items-center justify-content-center">
-      <div class="row w-75 login-container h-75">
+      <div class="row w-75 h-75">
         <div class="col-md-6 p-0">
-          <transition appear disappear name="custom-classes-transition" enter-active-class="animated slideInLeft" leave-active-class="animated slideOutRight ">
-            <div v-if="true" class="overlay h-100 display-flex justify-content-center align-items-center">
+          <transition
+            appear
+            disappear
+            name="custom-classes-transition"
+            enter-active-class="animated fadeInLeft"
+            leave-active-class="animated fadeOutRight "
+          >
+            <div
+              v-if="true"
+              class="overlay login-container h-100 display-flex justify-content-center align-items-center"
+            >
               <div class="overlay-panel h-50 w-75">
                 <h1>already registered?</h1>
                 <p>signin and start posting ads</p>
@@ -14,11 +23,19 @@
           </transition>
         </div>
         <div class="col-md-6 p-0 bg-white display-flex justify-content-center align-items-center">
-          <transition appear disappear name="custom-classes-transition" enter-active-class="animated slideInRight " leave-active-class="animated slideOutLeft ">
+          <transition
+            appear
+            disappear
+            name="custom-classes-transition"
+            enter-active-class="animated fadeInRight"
+            leave-active-class="animated fadeOutLeft"
+          >
+                    <div class="login-container w-100 h-100 d-flex justify-content-center align-items-center">
+
             <div v-if="true" class="form-container w-75">
-                          <router-link active-class class="home-icon" to="/">
-              <i class="fas fa-home"></i>
-            </router-link>
+              <router-link active-class class="home-icon" to="/">
+                <i class="fas fa-home"></i>
+              </router-link>
               <form
                 class="diplay-flex justify-content-center flex-direction-column text-center"
                 @submit.prevent="submit"
@@ -63,7 +80,6 @@
                   label="E-mail"
                   placeholder="email"
                   outline
-                  @input="$v.input_form.email.$touch()"
                   @blur="$v.input_form.email.$touch()"
                 />
                 <ul v-if="emailErrors" class="p-0 m-0">
@@ -83,7 +99,6 @@
                   label="Password"
                   outline
                   placeholder="password"
-                  @input="$v.input_form.password.$touch()"
                   @blur="$v.input_form.password.$touch()"
                 />
                 <ul v-if="passwordErrors" class="p-0 m-0">
@@ -119,6 +134,7 @@
                 <button class="custom-btn mt-3" type="submit">signup</button>
               </form>
             </div>
+                    </div>
           </transition>
         </div>
       </div>
@@ -208,18 +224,18 @@ export default {
           }
         })
         .then(resp => {
-          localStorage.setItem('isLoggedIn', true)
+          localStorage.setItem("isLoggedIn", true);
           this.$apollo.mutate({
-            mutation: require('../graphql/mutation/clientSide/toggleIsLoggedIn.gql'), 
+            mutation: require("../graphql/mutation/clientSide/toggleIsLoggedIn.gql"),
             variables: {
               bool_value: true
             }
-          })
+          });
           this.$toastr.s("Signed up successfully");
           this.$router.push({ name: "Profile" });
         })
         .catch(error => {
-          this.$toastr.e("Couln't sign up. Try again.")
+          this.$toastr.e("Couln't sign up. Try again.");
         });
     }
   },

@@ -1,16 +1,16 @@
 <template>
   <div class="row h-100 w-100 justify-content-center">
     <div class="col-md-10 h-100 display-flex align-items-center justify-content-center">
-      <div class="row w-75 login-container h-75">
+      <div class="row w-75  h-75">
         <div class="col-md-6 p-0">
           <transition
             appear
             disappear
             name="custom-classes-transition"
             enter-active-class="animated fadeInLeft "
-            leave-active-class="animated fadeOutRight "
+            leave-active-class="animated fadeOutRight"
           >
-            <div class="overlay h-100 display-flex justify-content-center align-items-center">
+            <div class="overlay login-container h-100 display-flex justify-content-center align-items-center">
               <div class="overlay-panel h-50 w-75">
                 <h1>not registered?</h1>
                 <p>signup now and start the journey with us</p>
@@ -27,6 +27,7 @@
             enter-active-class="animated fadeInRight "
             leave-active-class="animated fadeOutLeft "
           >
+          <div class="login-container w-100 h-100 d-flex justify-content-center align-items-center">
             <div class="form-container w-75">
               <router-link active-class class="home-icon" to="/">
                 <i class="fas fa-home"></i>
@@ -54,9 +55,7 @@
                   :class="{ 'is-invalid' : emailErrors.length != 0}"
                   label="E-mail"
                   placeholder="email"
-                  required
                   outline
-                  @input="$v.input_form.email.$touch()"
                   @blur="$v.input_form.email.$touch()"
                 ></b-form-input>
                 <ul v-if="emailErrors" class="p-0 m-0">
@@ -76,8 +75,6 @@
                   :class="{ 'is-invalid': passwordErrors.length != 0}"
                   label="Password"
                   outline
-                  required
-                  @input="$v.input_form.password.$touch()"
                   @blur="$v.input_form.password.$touch()"
                 ></b-form-input>
                 <ul v-if="passwordErrors" class="p-0 m-0">
@@ -93,6 +90,7 @@
                 <br />
                 <button class="custom-btn mt-3" type="submit">Login</button>
               </form>
+            </div>
             </div>
           </transition>
         </div>
